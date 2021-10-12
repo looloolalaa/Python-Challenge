@@ -92,10 +92,22 @@ def knapsack():
     #     print(v)
     print(v[-1][-1])
 
+def ant_warrior():
+    N = int(input())
+    food = list(map(int, input().split()))
+    a = [0 for _ in range(N)]
+    a[0] = food[0]
+    a[1] = max(food[0], food[1])
+    for i in range(2, N):
+        a[i] = max(food[i]+a[i-2], a[i-1])
+    # print(a)
+    print(a[-1])
+
 
 if __name__ == '__main__':
     # fibo()
     # cut_stick()
     # longest_common_substring()
     # longest_common_subsequence()
-    knapsack()
+    # knapsack()
+    ant_warrior()
