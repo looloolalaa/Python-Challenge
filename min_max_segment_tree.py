@@ -4,6 +4,7 @@ if __name__ == '__main__':
     N, M = map(int, sys.stdin.readline().split())
     A = [int(sys.stdin.readline()) for _ in range(N)]
     min_max_tree = [(0, 0) for _ in range(4 * len(A))]
+    # [(0, 0), (5, 100), (30, 100), (5, 81), ... ]
 
     def init_min_max_tree():
         init_min_max_node(1, 0, len(A)-1)
