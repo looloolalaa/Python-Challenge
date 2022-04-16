@@ -1,3 +1,8 @@
+"""
+set 사용
+"""
+
+
 def solution(skill, skill_trees):
 
     valid_skill = {''}
