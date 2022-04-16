@@ -2,7 +2,6 @@
 array[i] == array[i]로 끝나는 애들 모두 저장 j: [0~i-1]
 """
 
-
 if __name__ == '__main__':
     N = int(input())
     array = list(map(int, input().split()))
