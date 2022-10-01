@@ -1,28 +1,11 @@
-"""
-permu + prime
-"""
-from itertools import permutations
-
-
-def solution(numbers):
-    numbers = [num for num in numbers]
-    possible = set()
-
-    def isPrime(n):
-        if n < 2:
-            return False
-        return all(n % i != 0 for i in range(2, int(n ** (1 / 2)) + 1))
-
-    for i in range(1, len(numbers) + 1):
-        possible.update(set(map(lambda x: int(''.join(x)), permutations(numbers, i))))
-
-    count = 0
-    for p in possible:
-        if isPrime(p):
-            count += 1
-    return count
+# 에라토스테네스의 체 with set
+def solution(n):
+    primes = set(range(2, n+1))
+    for i in range(2, int(n**0.5)+1):
+        if i in primes:
+            primes -= set(range(2*i, n+1, i))
+    return len(primes)
 
 
 if __name__ == '__main__':
-    # "011"
-    print(solution("17"))
+    print(solution(10))
